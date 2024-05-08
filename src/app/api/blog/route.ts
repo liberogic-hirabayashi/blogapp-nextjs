@@ -12,7 +12,6 @@ export async function main() {
   }
 
 }
-main()
 
 //ブログの全記事取得API
 export const GET = async (req: Request, res: NextResponse) => {
