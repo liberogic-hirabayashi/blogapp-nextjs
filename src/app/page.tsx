@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function fetchAllBlogs(){
-  const res = await fetch('http://localhost:3002/api/blog',{cache:"no-store"})
+  const res = await fetch('http://localhost:3002/api',{cache:"no-store"})
   const data = await res.json();
   return data.posts;
 }
