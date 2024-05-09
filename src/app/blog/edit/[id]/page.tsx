@@ -9,7 +9,7 @@ const editBlog = async (
   description: string | undefined,
   id: number
 ) => {
-  const res = await fetch(`/api/blog/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_PATH}blog/${id}`, {
     method: "PUT",
     body: JSON.stringify({ title, description, id }),
     headers: {
@@ -22,7 +22,7 @@ const editBlog = async (
 const deleteBlog = async (
     id: number
   ) => {
-    const res = await fetch(`/api/blog/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_PATH}blog/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const deleteBlog = async (
 const getBlogById = async (
     id: number
   ) => {
-    const res = await fetch(`/api/blog/${id}`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_PATH}blog/${id}`)
     const data=await res.json()
     return data.post;
   };

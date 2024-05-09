@@ -7,7 +7,7 @@ const postBlog = async (
   title: string | undefined,
   description: string | undefined
 ) => {
-  const res = await fetch("/api/blog", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_PATH}blog`, {
     method: "POST",
     body: JSON.stringify({ title, description }),
     headers: {
