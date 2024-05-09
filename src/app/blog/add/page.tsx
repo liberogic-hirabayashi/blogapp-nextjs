@@ -7,7 +7,7 @@ const postBlog = async (
   title: string | undefined,
   description: string | undefined
 ) => {
-  const res = await fetch("http://localhost:3002/api", {
+  const res = await fetch("http://localhost:3002/api/blog", {
     method: "POST",
     body: JSON.stringify({ title, description }),
     headers: {
