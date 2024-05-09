@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function fetchAllBlogs(){
-  const res = await fetch('http://localhost:3002/api/blog',{cache:"no-store"})
+  const res = await fetch('http://localhost:3001/api/blog',{cache:"no-store"})
   const data = await res.json();
   return data.posts;
 }
@@ -12,7 +12,6 @@ export default async function Home() {
   const posts = await fetchAllBlogs();
 
   return (
-  
     <main className="w-full h-full">
     <div className="md:w-2/4 sm:w-3/4 m-auto p-4 my-5 rounded-lg bg-blue-900 drop-shadow-xl">
       <h1 className="text-slate-200 text-center text-2xl font-extrabold">
